@@ -5,7 +5,7 @@
 @endsection
 
 @section('pageTitle')
-    {{ trans('dashboard/auth.admin_auth_form_title') }}
+    {{ trans('dashboard/auth.user_auth_form_title') }}
 @endsection
 
 @section('content')
@@ -26,7 +26,7 @@
                 <!--begin::Heading-->
                 <div class="text-center mb-10">
                     <!--begin::Title-->
-                    <h1 class="text-dark mb-3">{{ trans('dashboard/auth.admin_auth_form_title') }}</h1>
+                    <h1 class="text-dark mb-3">{{ trans('dashboard/auth.user_auth_form_title') }}</h1>
                     <!--end::Title-->
                 </div>
                 <!--begin::Heading-->
