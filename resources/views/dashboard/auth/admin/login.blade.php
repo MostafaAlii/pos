@@ -21,7 +21,7 @@
         <div class="w-lg-500px bg-body rounded shadow-sm p-10 p-lg-15 mx-auto">
             <!--begin::Form-->
             @include('dashboard.common._partials.messages')
-            <form class="form w-100" novalidate="novalidate" method="POST" id="kt_sign_in_form" action="{{route('admin.login')}}">
+            <form class="form w-100" novalidate="novalidate" method="POST" id="kt_sign_in_form" action="{{route('login')}}">
                 @csrf
                 <!--begin::Heading-->
                 <div class="text-center mb-10">
