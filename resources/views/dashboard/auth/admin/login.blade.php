@@ -36,7 +36,7 @@
                     <label class="form-label fs-6 fw-bolder text-dark">{{ trans('dashboard/auth.email_address') }}</label>
                     <!--end::Label-->
                     <!--begin::Input-->
-                    <input class="form-control form-control-lg form-control-solid" type="text" name="email" autocomplete="off" />
+                    <input class="form-control form-control-lg form-control-solid" type="text" name="{{ config('fortify.username') }}" autocomplete="off" />
                     <!--end::Input-->
                     @error('email')
                         <div class="fv-plugins-message-container">
@@ -53,7 +53,9 @@
                         <label class="form-label fw-bolder text-dark fs-6 mb-0">{{ trans('dashboard/auth.password') }}</label>
                         <!--end::Label-->
                         <!--begin::Link-->
-                        <a href="" class="link-primary fs-6 fw-bolder">{{ trans('dashboard/auth.forgot_password') }}</a>
+                        @if(Route::has('password.request'))
+                            <a href="{{ route('password.request') }}" class="link-primary fs-6 fw-bolder">{{ trans('dashboard/auth.forgot_password') }}</a>
+                        @endif
                         <!--end::Link-->
                     </div>
                     <!--end::Wrapper-->

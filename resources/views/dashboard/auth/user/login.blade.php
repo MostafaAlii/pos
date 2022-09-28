@@ -53,7 +53,9 @@
                         <label class="form-label fw-bolder text-dark fs-6 mb-0">{{ trans('dashboard/auth.password') }}</label>
                         <!--end::Label-->
                         <!--begin::Link-->
-                        <a href="" class="link-primary fs-6 fw-bolder">{{ trans('dashboard/auth.forgot_password') }}</a>
+                        @if(Route::has('password.request'))
+                            <a href="{{ route('password.request') }}" class="link-primary fs-6 fw-bolder">{{ trans('dashboard/auth.forgot_password') }}</a>
+                        @endif
                         <!--end::Link-->
                     </div>
                     <!--end::Wrapper-->
