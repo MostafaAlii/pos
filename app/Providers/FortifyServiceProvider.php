@@ -2,7 +2,7 @@
 namespace App\Providers;
 use Illuminate\Http\Request;
 use Laravel\Fortify\Fortify;
-use App\Actions\Fortify\{ResetUserPassword, UpdateUserPassword, UpdateUserProfileInformation, CreateNewUser};
+use App\Actions\Fortify\{ResetUserPassword, UpdateUserPassword, UpdateUserProfileInformation, CreateNewUser, AuthenticateUserBy};
 use Illuminate\Support\Facades\{Config, RateLimiter};
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Cache\RateLimiting\Limit;
@@ -36,6 +36,11 @@ class FortifyServiceProvider extends ServiceProvider {
         RateLimiter::for('two-factor', function (Request $request) {
             return Limit::perMinute(5)->by($request->session()->get('login.id'));
         });
-        Fortify::viewPrefix(Config::get('fortify.guard') == 'admin' ? 'dashboard.auth.admin.' : 'dashboard.auth.user.');
+        if (Config::get('fortify.guard') == 'admin') {
+            Fortify::authenticateUsing([new AuthenticateUserBy, 'authenticateBy']);
+            Fortify::viewPrefix('dashboard.auth.admin.');
+        } else {
+            Fortify::viewPrefix('dashboard.auth.user.');
+        }
     }
 }
