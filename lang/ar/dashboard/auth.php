@@ -8,10 +8,15 @@ return [
     'forgot_password'                     =>                  'فقدان كلمة المرور',
     'login'                               =>                  'الدخــول',
     'logout'                              =>                  'تسجيل الخروج',
+    'confirm'                             =>                  'تأكيد',
     'please_wait'                         =>                  'برجاء الانتـــظار....',
     // Authentication Validation Messages::
     'email_required'                      =>                  'برجاء ادخال البريد الالكترونى',
     'real_email'                          =>                  'برجاء ادخال بريد الكترونى صحيح',
     'email_exists'                        =>                  'هذا البريد الالكترونى غير مسجل لدينا',
     'password_required'                   =>                  'برجاء ادخال كلمة المرور',
+    'enable_two_factor_authentication'    =>                  'تفعيل المصادقة المتعددة',
+    'disabled_two_factor_authentication'  =>                  'تعطيل المصادقة المتعددة', 
+    'two_factor_authentication'           =>                  'المصادقة المتعددة',
+    'two_factor_authentication_password_confirm'=>          'برجاء ادخال كلمة المرور لتأكيد المصادقة المتعددة',
 ];

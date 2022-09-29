@@ -145,6 +145,29 @@
             <a href="#" class="menu-link px-5">Account Settings</a>
         </div>
         <!--end::Menu item-->
+        <!-- Start Two Factor Authentication -->
+        <form action="{{ route('two-factor.enable') }}" method="POST">
+            @csrf
+            <div class="menu-item px-5 my-1">
+                    {{--<input class="form-check-input w-30px h-20px" type="checkbox" value="1" checked="checked" name="notifications" />
+                    <span class="form-check-label text-muted fs-7">{{trans('dashboard/auth.admin_2factor_authentication')}}</span>--}}
+                    @if(!auth('admin')->user()->two_factor_secret)
+                        <button type="submit" class="btn btn-sm menu-link px-5 text-success">{{trans('dashboard/auth.enable_two_factor_authentication')}}</button>
+                    @else
+                        <div class="menu-item px-5 my-1">{!! auth('admin')->user()->twoFactorQrCodeSvg()  !!}</div>
+                        @method('delete')
+                        <button type="submit" class="btn btn-sm menu-link px-5 text-danger">{{trans('dashboard/auth.disabled_two_factor_authentication')}}</button>
+                    @endif
+
+                    @if (session('status') == 'two-factor-authentication-confirmed')
+                        <div class="mb-4 font-medium text-sm">
+                            Two factor authentication confirmed and enabled successfully.
+                        </div>
+                    @endif
+                </label>
+            </div>
+        </form>
+        <!-- End Two Factor Authentication -->
         <!--begin::Menu item-->
         <form action="{{ route('logout') }}" method="POST">
             @csrf
