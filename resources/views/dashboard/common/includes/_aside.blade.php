@@ -384,27 +384,27 @@
                 </div>
                 <!-- End Settings -->
 
-                <!-- Start Categories -->
+                <!-- Start Admins Menu -->
                 <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
                     <span class="menu-link">
                         <span class="menu-icon">
-                            <i class="bi bi-archive fs-3"></i>
+                            <i class="bi bi-people fs-4"></i>
                         </span>
-                        <span class="menu-title">{{ trans('dashboard/category.categories_list') }}</span>
+                        <span class="menu-title">{{ trans('dashboard/admin.admin_menu_in_sidebar') }}</span>
                         <span class="menu-arrow"></span>
                     </span>
                     <div class="menu-sub menu-sub-accordion menu-active-bg">
                         <div class="menu-item">
-                            <a class="menu-link" href="{{--route('Categories.index')--}}">
+                            <a class="menu-link" href="{{route('admins.index')}}">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
-                                <span class="menu-title">{{ trans('dashboard/category.categories') }}</span>
+                                <span class="menu-title">{{ trans('dashboard/admin.admins') }}</span>
                             </a>
                         </div>
                     </div>
                 </div>
-                <!-- End Categories -->
+                <!-- End Admins Menu -->
                 <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
                     <span class="menu-link">
                         <span class="menu-icon">

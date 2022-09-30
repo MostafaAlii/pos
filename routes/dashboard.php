@@ -11,5 +11,7 @@ Route::group(
         /******************************** Start Admin Routes ****************** */
         Route::group(['prefix' => 'admin'], function () {
             Route::get('dashboard', [Dashboard\DashboardController::class, 'index'])->name('dashboard');
+            // admins ::
+            Route::resource('admins', Dashboard\AdminController::class);
         });
 });
