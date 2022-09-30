@@ -23,12 +23,15 @@
 		<link href="https://fonts.googleapis.com/css?family=Cairo:300,400&amp;subset=arabic,latin-ext" rel="stylesheet">
 		<!--end::Fonts-->
 		<link href="{{ asset("assets/dashboard/plugins/custom/fullcalendar/fullcalendar.bundle.css") }}" rel="stylesheet" type="text/css" />
+		<link href="{{ asset("assets/dashboard/css/jquery.dataTables.min.css") }}" rel="stylesheet" type="text/css" />
 		@if(app()->getLocale()=='ar')  <!-- for arabic --> 
 			<!--begin::Page Vendor Stylesheets(used by this page)-->
 			<link href="{{ asset("assets/dashboard/plugins/custom/prismjs/prismjs.bundle.rtl.css") }}" rel="stylesheet" type="text/css" />
 			<link href="{{ asset("assets/dashboard/plugins/global/plugins.bundle.rtl.css") }}" rel="stylesheet" type="text/css" />
 			<!--begin::Global Stylesheets Bundle(used by all pages)-->
 			<link href="{{ asset("assets/dashboard/css/style.bundle.rtl.css") }}" rel="stylesheet" type="text/css" />
+			{{--<link href="{{ asset("assets/dashboard/css/>jquery.dataTables.min.css") }}" rel="stylesheet" type="text/css" />
+			<script src="{{ asset("assets/dashboard/js/datatables.min.js>") }}"></script>--}}
 		@else
 			<!--begin::Page Vendor Stylesheets(used by this page)-->
 			<link href="{{ asset("assets/dashboard/plugins/global/plugins.bundle.css") }}" rel="stylesheet" type="text/css" />
